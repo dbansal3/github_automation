@@ -36,9 +36,15 @@ def add_users():
     for user in users:
         try:
             ghuser = gh.get_user(user.strip())
+        except Exception as e:
+            print("Exception is : {}".format(e))
+            print("Could not detect user {}".format(user.strip()))
+            continue
+        '''
         except GithubException:
             print("Could not detect user {}".format(user.strip()))
             continue
+        '''
         try:
             gh.get_repo(ORG_NAME+"/"+REPO_NAME).add_to_collaborators(ghuser,PERMISSION)
         except GithubException:
