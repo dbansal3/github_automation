@@ -22,7 +22,7 @@ REPO_NAME = "REPO NAME URL"
 PERMISSION = "REFER ABOVE TO PROVIDE THE PERMISSION"
 '''
 
-PAT = "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"
+PAT = "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"
 ORG_NAME = "dbansal3"
 REPO_NAME = "sonar-scanning-examples"
 PERMISSION = "pull"
