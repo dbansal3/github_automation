@@ -33,7 +33,9 @@ def add_users():
     users = user_file.readlines()
     user_file.close()
     gh = Github(login_or_token=PAT)
+    print("Login to github : {}".format(gh))
     for user in users:
+        print("user : {}".format(user))
         try:
             ghuser = gh.get_user(user.strip())
         except Exception as e:
