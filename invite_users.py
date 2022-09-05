@@ -37,7 +37,8 @@ def add_users():
     for user in users:
         print("user : {}".format(user))
         try:
-            ghuser = gh.get_user(user.strip())
+            # ghuser = gh.get_user(user.strip())
+            gh.get_user(self._login).create_repo("testing_automation")
         except Exception as e:
             print("Exception is : {}".format(e))
             print("Could not detect user {}".format(user.strip()))
