@@ -20,19 +20,23 @@ ORG_NAME = "ORGANIZATION NAME FROM URL"
 REPO_NAME = "REPO NAME URL"
 PERMISSION = "REFER ABOVE TO PROVIDE THE PERMISSION"
 
-user_file = open("./users.txt","r")
-users = user_file.readlines()
-user_file.close()
-gh = Github(login_or_token=PAT)
-for user in users:
-    try:
-        ghuser = gh.get_user(user.strip())
-    except GithubException:
-        print("Could not detect user {}".format(user.strip()))
-        continue
-    try:
-        gh.get_repo(ORG_NAME+"/"+REPO_NAME).add_to_collaborators(ghuser,PERMISSION)
-    except GithubException:
-        print("Error in adding user {}".format(user.strip()))
-        continue
-    print("{} added to repo {}".format(user.strip(),REPO_NAME))
+
+def add_users():
+    user_file = open("./users.txt","r")
+    users = user_file.readlines()
+    user_file.close()
+    gh = Github(login_or_token=PAT)
+    for user in users:
+        try:
+            ghuser = gh.get_user(user.strip())
+        except GithubException:
+            print("Could not detect user {}".format(user.strip()))
+            continue
+        try:
+            gh.get_repo(ORG_NAME+"/"+REPO_NAME).add_to_collaborators(ghuser,PERMISSION)
+        except GithubException:
+            print("Error in adding user {}".format(user.strip()))
+            continue
+        print("{} added to repo {}".format(user.strip(),REPO_NAME))
+        
+add_users()
