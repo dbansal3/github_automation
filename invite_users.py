@@ -55,4 +55,4 @@ def add_users(self):
             continue
         print("{} added to repo {}".format(user.strip(),REPO_NAME))
         
-add_users()
+add_users(self)
