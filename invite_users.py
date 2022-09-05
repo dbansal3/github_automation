@@ -28,7 +28,7 @@ REPO_NAME = "sonar-scanning-examples"
 PERMISSION = "pull"
 
 
-def add_users():
+def add_users(self):
     user_file = open("./users.txt","r")
     users = user_file.readlines()
     user_file.close()
