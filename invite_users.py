@@ -15,10 +15,17 @@
 from github import Github
 from github import GithubException
 
+'''
 PAT = "PROVIDE YOUR GITHUB TOKEN HERE"
 ORG_NAME = "ORGANIZATION NAME FROM URL"
 REPO_NAME = "REPO NAME URL"
 PERMISSION = "REFER ABOVE TO PROVIDE THE PERMISSION"
+'''
+
+PAT = "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"
+ORG_NAME = "dbansal3"
+REPO_NAME = "sonar-scanning-examples"
+PERMISSION = "pull"
 
 
 def add_users():
