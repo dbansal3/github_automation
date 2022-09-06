@@ -8,9 +8,7 @@ print ("res : {}".format(g))
 # g = Github(base_url="https://{hostname}/api/v3", login_or_token="access_token")
 
 user = g.get_user()
-print(user.name)
-print(user.login)
-
+print(user)
 
 for repo in g.get_user().get_repos():
     print(repo.name)
