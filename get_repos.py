@@ -11,7 +11,7 @@ user = g.get_user().get_repos()
 print(user)
 
 for repo in g.get_user().get_repos():
-    print(repo.name)
+    print(repo)
     repo.edit(has_wiki=False)
     # to see all the available attributes and methods
     print(dir(repo))
