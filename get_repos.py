@@ -7,7 +7,7 @@ print ("res : {}".format(g))
 # Github Enterprise with custom hostname
 # g = Github(base_url="https://{hostname}/api/v3", login_or_token="access_token")
 
-user = g.get_user()
+user = g.get_user().get_repos()
 print(user)
 
 for repo in g.get_user().get_repos():
